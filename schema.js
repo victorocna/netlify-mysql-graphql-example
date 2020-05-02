@@ -9,13 +9,13 @@ const mysql = require("./connect");
 const Hello = new GraphQLObjectType({
   name: "hello",
   fields: () => ({
-    id: {
+    ID: {
       type: GraphQLString,
-      resolve: ({ id }) => id,
+      resolve: ({ ID }) => ID,
     },
-    name: {
+    display_name: {
       type: GraphQLString,
-      resolve: ({ name }) => name,
+      resolve: ({ display_name }) => display_name,
     },
   }),
 });
@@ -28,7 +28,7 @@ const schema = new GraphQLSchema({
         type: GraphQLList(Hello),
         resolve: async () => {
           return new Promise((resolve) => {
-            mysql.query("select * from hello", (err, results) => {
+            mysql.query("select * from wp_sandaaa_users", (err, results) => {
               return resolve(results);
             });
           });

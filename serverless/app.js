@@ -7,14 +7,14 @@ const app = express();
 const graphqlHTTP = require("express-graphql");
 const schema = require("../schema");
 // const mysql = require("../connect");
-const mysql = require('../connect')
+const mysql = require("../connect");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 async function getHello(id) {
   return new Promise((resolve, reject) => {
-    const sql = "select * from hello where id=?";
+    const sql = "select * from wp_sandaaa_users where id=?";
     mysql.query(sql, [id], (err, results) => {
       if (err) {
         reject(err);
