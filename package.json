@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
+    "build": "netlify-lambda build serverless -c scripts/lambda.js",
     "start": "netlify-lambda serve serverless -c scripts/lambda.js"
   },
   "keywords": [],
